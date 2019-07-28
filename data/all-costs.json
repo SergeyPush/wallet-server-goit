@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "products": [
+    {
+      "id": 19112831,
+      "name": "Пицца Пепперони с томатами",
+      "description": "",
+      "price": "100",
+      "currency": "UAN",
+      "created": "21-07-2019",
+      "modified": "23-07-2019",
+      "categories": ["food"]
+    },
+    {
+      "id": 19112832,
+      "name": "Пицца Моцарелла",
+      "description": "",
+      "price": "120",
+      "currency": "UAN",
+      "created": "21-07-2019",
+      "modified": "23-07-2019",
+      "categories": ["food"]
+    },
+    {
+      "id": 19112832,
+      "name": "Дееская игрушка",
+      "description": "",
+      "price": "200",
+      "currency": "UAN",
+      "created": "21-07-2019",
+      "modified": "23-07-2019",
+      "categories": ["children"]
+    },
+    {
+      "id": 19112833,
+      "name": "Книга",
+      "description": "",
+      "price": "99",
+      "currency": "UAN",
+      "created": "21-07-2019",
+      "modified": "23-07-2019",
+      "categories": ["book"]
+    },
+    {
+      "id": 19112833,
+      "name": "Бумага",
+      "description": "",
+      "price": "50",
+      "currency": "UAN",
+      "created": "21-07-2019",
+      "modified": "23-07-2019",
+      "categories": ["home"]
+    }
+  ]
+}
