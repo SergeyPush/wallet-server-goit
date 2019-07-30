@@ -4,32 +4,43 @@ const data = require("./data/all-costs.json");
 
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("Root is opened");
 });
 
-app.get("/costs", (req, res) => {
-  const { category } = req.query;
-
+app.get("/costs/", (req, res) => {
+  let { category } = req.query;
   if (category) {
-    const arrOfProducts = [];
-    data.products.forEach(el => {
-      if (el.categories.includes(category)) arrOfProducts.push(el);
+    const filtered = data.products.filter(el =>
+      el.categories.includes(category)
+    );
+    const state = filtered.length > 0 ? "success" : "no products";
+    return res.send({
+      state,
+      products: filtered
     });
-    return res.send(arrOfProducts);
   }
 
-  res.send(data.products);
+  res.send(data);
 });
 
 app.get("/costs/:id", (req, res) => {
   const product = data.products.find(
     p => parseInt(p.id) === parseInt(req.params.id)
   );
-  res.send(product);
+  const status = product ? "success" : "no such product";
+
+  res.send({
+    status,
+    products: product
+  });
 });
 
-app.use(express.json());
+app.post("/costs", (req, res) => {
+  res.send(req.body);
+});
 
 app.use(function(req, res, next) {
   let err = new Error("not found");
@@ -38,8 +49,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.send("error", { message: err.message, error: err });
+  res.status(err.status || 500).send({ message: err.message, error: err });
 });
 
 app.listen(PORT, () => {
