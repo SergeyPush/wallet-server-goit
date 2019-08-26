@@ -1,0 +1,23 @@
+GET http://localhost:3000/products
+###
+GET http://localhost:3000/products/1
+###
+GET http://localhost:3000/products/?ids=1,2,3
+###
+GET http://localhost:3000/users/1
+###
+POST http://localhost:3000/users
+content-type: application/json
+
+{
+    "name":"user1",
+    "pass":"12345678"
+}
+###
+POST http://localhost:3000/orders
+content-type: application/json
+
+{
+    "name":"order1",
+    "description":"some order"
+}
