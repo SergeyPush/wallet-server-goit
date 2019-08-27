@@ -1,0 +1,7 @@
+{
+    "dev": {
+        "port": 5000,
+        "db": "mongodb+srv://spushkovskiy:mdb12345678@devconnector-insxj.mongodb.net/wallet_collection?retryWrites=true&w=majority"
+
+    }
+}
