@@ -1,9 +1,12 @@
+### GET all products
 GET http://localhost:5000/products
-###
+### GET one product by ID
 GET http://localhost:5000/products/1
-###
+### GET several products by IDs
 GET http://localhost:5000/products/?ids=1,2,3
-###
+### GET all users
+GET http://localhost:5000/users
+### GET user by ID
 GET http://localhost:5000/users/5d64e8cde1a4de26c4c6211e
 ###
 POST http://localhost:5000/users
@@ -12,6 +15,16 @@ content-type: application/json
 {
     "name":"user1",
     "password":"12345678",
+    "email":"user1@mail.com"
+}
+###
+
+PUT http://localhost:5000/users/5d64e8cde1a4de26c4c6211e
+content-type: application/json
+
+{
+    "name":"user1",
+    "password":"123456789",
     "email":"user1@mail.com"
 }
 ###
