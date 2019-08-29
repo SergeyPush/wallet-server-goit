@@ -32,7 +32,8 @@ app.use(function(err, req, res, next) {
 mongoose
   .connect(config.get("dev.db"), {
     useNewUrlParser: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true
   })
   .then(console.log("Connected to mongo DB"))
   .catch(err => console.error("Cannot connect to Mongo DB", err));
