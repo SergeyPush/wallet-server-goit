@@ -2,10 +2,6 @@ const Product = require("./productModel");
 
 exports.getAllProducts = async (req, res) => {
   try {
-    if (req.query) {
-      console.log(req.query.ids);
-    }
-
     const product = await Product.find();
     res.status(200).json({
       status: "success",
